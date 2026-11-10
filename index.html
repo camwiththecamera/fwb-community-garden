@@ -151,6 +151,18 @@
   .sw-line{height:0;width:18px;border-radius:0;border:none;border-top:3px dashed #5b9bd5;margin-top:8px;box-shadow:none}
   .garden-map-note{font-size:.86rem;color:var(--ink-soft);margin:12px 4px 2px}
   @media (max-width:640px){ .map-legend li{border-radius:14px} }
+  .walkthrough-cta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:14px 2px 18px}
+  .walkthrough-btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    border:1px solid var(--line);background:var(--surface);color:var(--green-deep);
+    border-radius:10px;padding:10px 16px;font-weight:700;font-size:.95rem;text-decoration:none;
+    box-shadow:var(--shadow);
+  }
+  .walkthrough-btn:hover{border-color:var(--green);color:var(--green)}
+  @media (prefers-color-scheme: dark){ .walkthrough-btn{color:var(--green)} }
+  .walkthrough-btn svg{flex:none}
+  .walkthrough-sub{margin:0;font-size:.88rem;color:var(--ink-soft)}
+  @media (max-width:640px){ .walkthrough-btn{width:100%} .walkthrough-sub{width:100%;text-align:center} }
 
   /* ---------- Up next ---------- */
   .next-grid{display:grid;gap:12px}
@@ -526,6 +538,14 @@
       </ul>
       <p class="garden-map-note">Sizes and positions are a planning guide, not a survey. The drawing follows Ruth's written plan only, and the layout still needs fitting to the site and City approval.</p>
       </div>
+    </div>
+
+    <div class="walkthrough-cta">
+      <a class="walkthrough-btn" href="walkthrough.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="M3 7l9 5 9-5"/><path d="M12 22V12"/></svg>
+        Take the 3D walkthrough
+      </a>
+      <p class="walkthrough-sub">Orbit the plan or ride the guided walk at eye level.</p>
     </div>
 
         <div class="plan-grid">
