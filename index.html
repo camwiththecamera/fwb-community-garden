@@ -131,6 +131,27 @@
   .plan-map .to{color:var(--ink-soft)}
   .plan-note{font-size:.86rem;color:var(--ink-soft);margin:12px 2px 0}
 
+  /* ---------- Garden map ---------- */
+  .garden-map-card{margin:0 0 16px;padding:0;overflow:hidden;border-radius:18px}
+  .garden-map-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px;justify-content:space-between;padding:18px 20px 0}
+  .garden-map-head h3{margin:0;font-family:"Newsreader",Georgia,serif;font-size:1.45rem;font-weight:600;line-height:1.2}
+  .planned-badge{font-size:.78rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;background:var(--gold-soft);color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:5px 11px;white-space:nowrap}
+  .garden-map-caption{margin:0;padding:8px 20px 14px;color:var(--ink-soft);font-size:.93rem;max-width:760px}
+  .garden-map-body{padding:0 14px 14px}
+  .garden-map-wrap{background:linear-gradient(180deg,#dfe9cf,#cdddb6);border:1px solid var(--line);border-radius:16px;padding:8px;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 10px 28px rgba(29,43,26,.14)}
+  @media (prefers-color-scheme: dark){ .garden-map-wrap{background:linear-gradient(180deg,#2a3a22,#22301c)} }
+  .garden-map-wrap svg{display:block;width:100%;height:auto;border-radius:10px}
+  .garden-map-sub{margin:12px 4px 0;font-size:.9rem;color:var(--ink-soft)}
+  .garden-map-sub strong{color:var(--ink)}
+  .map-legend{list-style:none;margin:14px 2px 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  .map-legend li{display:inline-flex;gap:8px;align-items:flex-start;font-size:.84rem;color:var(--ink-soft);line-height:1.4;background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:7px 12px 7px 9px;max-width:100%}
+  .map-legend strong{color:var(--ink)}
+  .sw{flex:none;width:14px;height:14px;border-radius:50%;margin-top:2px;border:2px solid #fff;box-shadow:0 0 0 1px rgba(29,43,26,.18)}
+  .sw-sq{border-radius:4px}
+  .sw-line{height:0;width:18px;border-radius:0;border:none;border-top:3px dashed #5b9bd5;margin-top:8px;box-shadow:none}
+  .garden-map-note{font-size:.86rem;color:var(--ink-soft);margin:12px 4px 2px}
+  @media (max-width:640px){ .map-legend li{border-radius:14px} }
+
   /* ---------- Up next ---------- */
   .next-grid{display:grid;gap:12px}
   @media (min-width:760px){.next-grid{grid-template-columns:repeat(3,1fr)}}
@@ -302,7 +323,212 @@
       <span class="vision-chip">A peaceful place to recharge</span>
       <span class="vision-chip">Pollinators, compost &amp; careful water use</span>
     </div>
-    <div class="plan-grid">
+
+    <div class="card garden-map-card">
+      <div class="garden-map-head">
+        <h3>Garden map</h3>
+        <span class="planned-badge">Planned · Not yet built</span>
+      </div>
+      <p class="garden-map-caption">Planned layout from the garden plan, not yet built. A landscape plan drawing made from Ruth Sykes' written plan, showing where each part of the garden is intended to go. The final layout still gets adapted to the tennis center site and approved by the City in Phase 2.</p>
+      <div class="garden-map-body">
+      <div class="garden-map-wrap">
+        <svg viewBox="0 0 900 640" role="img" aria-label="Polished top-down landscape plan of the Fort Walton Beach Community Garden. A fenced garden with soft grass, gravel paths, fruit trees and berries at the top, wood framed raised beds with crop rows and drip lines in the centre, accessible beds and a childrens garden on the right, tool shed, greenhouse, cold frames, compost and rainwater on the left, shared plots and a pergola gathering patio at the bottom, a pollinator flower strip and entrance gate. Planned and not yet built.">
+          <defs>
+            <linearGradient id="grass" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#cfe3b3"/><stop offset=".45" stop-color="#b9d19a"/><stop offset="1" stop-color="#a8c68a"/>
+            </linearGradient>
+            <radialGradient id="grassGlow" cx=".35" cy=".25" r=".9">
+              <stop offset="0" stop-color="#ffffff" stop-opacity=".28"/><stop offset=".55" stop-color="#ffffff" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="soil" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#6f4f33"/><stop offset="1" stop-color="#543a24"/>
+            </linearGradient>
+            <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#c49a6b"/><stop offset="1" stop-color="#9a7348"/>
+            </linearGradient>
+            <linearGradient id="roof" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#b98a5f"/><stop offset="1" stop-color="#8f6540"/>
+            </linearGradient>
+            <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#dff2ec" stop-opacity=".95"/><stop offset="1" stop-color="#a9cfc4" stop-opacity=".9"/>
+            </linearGradient>
+            <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#23351c" flood-opacity="0.22"/></filter>
+            <filter id="bedShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="1.6" flood-color="#2b1d0f" flood-opacity="0.28"/></filter>
+            <style>
+              .tag{font-family:"Public Sans",sans-serif}
+              .tag rect{fill:#fff;stroke:rgba(35,53,28,.22);stroke-width:1}
+              .tag text{fill:#24351f;font-size:12.5px;font-weight:700;letter-spacing:.01em}
+              .tag circle{fill:#2c6e35}
+              .tiny{font-family:"Public Sans",sans-serif;font-size:11px;font-weight:700;fill:#5a4630}
+            </style>
+          </defs>
+
+          <!-- plot shadow + ground -->
+          <rect x="22" y="26" width="856" height="572" rx="26" fill="#3d5a2e" opacity=".22"/>
+          <rect x="18" y="18" width="856" height="572" rx="26" fill="url(#grass)"/>
+          <rect x="18" y="18" width="856" height="572" rx="26" fill="url(#grassGlow)"/>
+          <ellipse cx="250" cy="180" rx="210" ry="120" fill="#fff" opacity=".07"/>
+          <ellipse cx="700" cy="470" rx="240" ry="130" fill="#2e5222" opacity=".08"/>
+          <ellipse cx="620" cy="150" rx="180" ry="90" fill="#fff" opacity=".06"/>
+
+          <!-- gravel paths -->
+          <g fill="#ecdcb8" stroke="#d9c69a" stroke-width="1.5">
+            <rect x="28" y="468" width="836" height="34" rx="17"/>
+            <rect x="618" y="142" width="34" height="326" rx="17"/>
+            <rect x="28" y="132" width="836" height="10" rx="5" opacity=".55"/>
+          </g>
+          <g fill="#d9c69a" opacity=".5"><circle cx="120" cy="485" r="2"/><circle cx="300" cy="478" r="2"/><circle cx="520" cy="490" r="2"/><circle cx="760" cy="480" r="2"/><circle cx="635" cy="220" r="2"/><circle cx="635" cy="340" r="2"/></g>
+
+          <!-- FRUIT & BERRY ORCHARD (top) -->
+          <rect x="34" y="34" width="824" height="92" rx="18" fill="#b7d69a" stroke="#8db474" stroke-width="1.5"/>
+          <g filter="url(#soft)">
+            <!-- tree helper repeated manually -->
+            <g><ellipse cx="86" cy="88" rx="30" ry="10" fill="#2e5222" opacity=".18"/><circle cx="86" cy="76" r="30" fill="#4e7f3a"/><circle cx="74" cy="66" r="18" fill="#6aa84f"/><circle cx="98" cy="68" r="15" fill="#5d9646"/><circle cx="86" cy="78" r="4" fill="#5d4630"/></g>
+            <g><ellipse cx="166" cy="90" rx="24" ry="8" fill="#2e5222" opacity=".18"/><circle cx="166" cy="80" r="24" fill="#527f3d"/><circle cx="156" cy="72" r="13" fill="#71ad55"/><circle cx="166" cy="81" r="3.5" fill="#5d4630"/></g>
+            <g><ellipse cx="706" cy="90" rx="24" ry="8" fill="#2e5222" opacity=".18"/><circle cx="706" cy="80" r="24" fill="#527f3d"/><circle cx="716" cy="72" r="13" fill="#71ad55"/><circle cx="706" cy="81" r="3.5" fill="#5d4630"/></g>
+            <g><ellipse cx="788" cy="88" rx="30" ry="10" fill="#2e5222" opacity=".18"/><circle cx="788" cy="76" r="30" fill="#4e7f3a"/><circle cx="776" cy="66" r="18" fill="#6aa84f"/><circle cx="800" cy="68" r="15" fill="#5d9646"/><circle cx="788" cy="78" r="4" fill="#5d4630"/></g>
+          </g>
+          <!-- berry shrubs -->
+          <g fill="#6d9e57" stroke="#4e7a3a" stroke-width="1.2">
+            <path d="M238 96 q10-22 26-12 q18-14 28 4 q16 6 6 20 q-30 10-60 0 q-10-8 0-12z"/>
+            <path d="M582 96 q10-22 26-12 q18-14 28 4 q16 6 6 20 q-30 10-60 0 q-10-8 0-12z"/>
+          </g>
+          <g><circle cx="258" cy="92" r="4" fill="#7a4a8a"/><circle cx="278" cy="98" r="4" fill="#c0392b"/><circle cx="602" cy="92" r="4" fill="#7a4a8a"/><circle cx="622" cy="98" r="4" fill="#c0392b"/></g>
+
+          <!-- LEFT STRUCTURES -->
+          <g filter="url(#bedShadow)">
+            <rect x="36" y="152" width="156" height="62" rx="10" fill="url(#roof)" stroke="#6f4c2c" stroke-width="1.5"/>
+            <path d="M44 183 H184 M114 154 V212" stroke="#6f4c2c" stroke-width="1.4" opacity=".6"/>
+            <rect x="36" y="226" width="156" height="82" rx="10" fill="url(#glass)" stroke="#6fa08f" stroke-width="1.8"/>
+            <path d="M52 226 V308 M84 226 V308 M116 226 V308 M148 226 V308 M36 252 H192 M36 282 H192" stroke="#7fb3a3" stroke-width="1.3"/>
+            <path d="M36 267 L192 240 M36 240 L192 294" stroke="#ffffff" stroke-width="1" opacity=".5"/>
+          </g>
+          <!-- cold frames -->
+          <g filter="url(#bedShadow)"><g fill="#cfe8d8" stroke="#5f9a76" stroke-width="1.4"><rect x="36" y="320" width="46" height="30" rx="6"/><rect x="91" y="320" width="46" height="30" rx="6"/><rect x="146" y="320" width="46" height="30" rx="6"/></g><path d="M59 322 V348 M114 322 V348 M169 322 V348" stroke="#8fbc9f" stroke-width="1.2"/></g>
+          <!-- compost 3 bins -->
+          <g filter="url(#bedShadow)"><rect x="36" y="362" width="156" height="54" rx="9" fill="#8a6d4b" stroke="#5f4630" stroke-width="1.5"/><path d="M88 362 V416 M140 362 V416" stroke="#5f4630" stroke-width="2"/><rect x="44" y="374" width="36" height="28" rx="4" fill="#6b5335"/><rect x="96" y="374" width="36" height="28" rx="4" fill="#7a5f3a"/><rect x="148" y="374" width="36" height="28" rx="4" fill="#5f4630"/></g>
+          <!-- rainwater -->
+          <g filter="url(#soft)"><circle cx="62" cy="444" r="16" fill="#6aa9d6" stroke="#2f6da3" stroke-width="1.8"/><circle cx="98" cy="444" r="16" fill="#7db6de" stroke="#2f6da3" stroke-width="1.8"/><ellipse cx="62" cy="438" rx="9" ry="4" fill="#cfe8f7"/><ellipse cx="98" cy="438" rx="9" ry="4" fill="#cfe8f7"/><rect x="124" y="424" width="58" height="40" rx="10" fill="#5b9bd5" stroke="#2f6da3" stroke-width="1.8"/><ellipse cx="153" cy="432" rx="18" ry="5" fill="#cfe8f7" opacity=".8"/></g>
+
+          <!-- CENTRE RAISED BEDS -->
+          <rect x="208" y="152" width="396" height="316" rx="16" fill="#e6d9b5" stroke="#d3c08f" stroke-width="1.2"/>
+          <g id="beds"></g>
+          <!-- beds drawn explicitly: 3 cols x 4 rows -->
+          <g>
+            <!-- generate rows via grouped rects -->
+            <g filter="url(#bedShadow)">
+              <g><rect x="222" y="166" width="112" height="56" rx="7" fill="url(#wood)"/><rect x="228" y="172" width="100" height="44" rx="4" fill="url(#soil)"/></g>
+              <g><rect x="350" y="166" width="112" height="56" rx="7" fill="url(#wood)"/><rect x="356" y="172" width="100" height="44" rx="4" fill="url(#soil)"/></g>
+              <g><rect x="478" y="166" width="112" height="56" rx="7" fill="url(#wood)"/><rect x="484" y="172" width="100" height="44" rx="4" fill="url(#soil)"/></g>
+              <g><rect x="222" y="238" width="112" height="56" rx="7" fill="url(#wood)"/><rect x="228" y="244" width="100" height="44" rx="4" fill="url(#soil)"/></g>
+              <g><rect x="350" y="238" width="112" height="56" rx="7" fill="url(#wood)"/><rect x="356" y="244" width="100" height="44" rx="4" fill="url(#soil)"/></g>
+              <g><rect x="478" y="238" width="112" height="56" rx="7" fill="url(#wood)"/><rect x="484" y="244" width="100" height="44" rx="4" fill="url(#soil)"/></g>
+              <g><rect x="222" y="310" width="112" height="56" rx="7" fill="url(#wood)"/><rect x="228" y="316" width="100" height="44" rx="4" fill="url(#soil)"/></g>
+              <g><rect x="350" y="310" width="112" height="56" rx="7" fill="url(#wood)"/><rect x="356" y="316" width="100" height="44" rx="4" fill="url(#soil)"/></g>
+              <g><rect x="478" y="310" width="112" height="56" rx="7" fill="url(#wood)"/><rect x="484" y="316" width="100" height="44" rx="4" fill="url(#soil)"/></g>
+              <g><rect x="222" y="382" width="112" height="56" rx="7" fill="url(#wood)"/><rect x="228" y="388" width="100" height="44" rx="4" fill="url(#soil)"/></g>
+              <g><rect x="350" y="382" width="112" height="56" rx="7" fill="url(#wood)"/><rect x="356" y="388" width="100" height="44" rx="4" fill="url(#soil)"/></g>
+              <g><rect x="478" y="382" width="112" height="56" rx="7" fill="url(#wood)"/><rect x="484" y="388" width="100" height="44" rx="4" fill="url(#soil)"/></g>
+            </g>
+            <!-- crop rows: dots per bed (2 rows of 4) -->
+            <g fill="#7bc47a" stroke="#4e8a4a" stroke-width=".7">
+              <g><circle cx="248" cy="186" r="5"/><circle cx="272" cy="186" r="5"/><circle cx="296" cy="186" r="5"/><circle cx="248" cy="204" r="5"/><circle cx="272" cy="204" r="5"/><circle cx="296" cy="204" r="5"/></g>
+              <g><circle cx="376" cy="186" r="5"/><circle cx="400" cy="186" r="5"/><circle cx="424" cy="186" r="5"/><circle cx="376" cy="204" r="5"/><circle cx="400" cy="204" r="5"/><circle cx="424" cy="204" r="5"/></g>
+              <g><circle cx="504" cy="186" r="5"/><circle cx="528" cy="186" r="5"/><circle cx="552" cy="186" r="5"/><circle cx="504" cy="204" r="5"/><circle cx="528" cy="204" r="5"/><circle cx="552" cy="204" r="5"/></g>
+              <g><circle cx="248" cy="258" r="5"/><circle cx="272" cy="258" r="5"/><circle cx="296" cy="258" r="5"/><circle cx="248" cy="276" r="5"/><circle cx="272" cy="276" r="5"/><circle cx="296" cy="276" r="5"/></g>
+              <g><circle cx="376" cy="258" r="5"/><circle cx="400" cy="258" r="5"/><circle cx="424" cy="258" r="5"/><circle cx="376" cy="276" r="5"/><circle cx="400" cy="276" r="5"/><circle cx="424" cy="276" r="5"/></g>
+              <g><circle cx="504" cy="258" r="5"/><circle cx="528" cy="258" r="5"/><circle cx="552" cy="258" r="5"/><circle cx="504" cy="276" r="5"/><circle cx="528" cy="276" r="5"/><circle cx="552" cy="276" r="5"/></g>
+              <g><circle cx="248" cy="330" r="5"/><circle cx="272" cy="330" r="5"/><circle cx="296" cy="330" r="5"/><circle cx="248" cy="348" r="5"/><circle cx="272" cy="348" r="5"/><circle cx="296" cy="348" r="5"/></g>
+              <g><circle cx="376" cy="330" r="5"/><circle cx="400" cy="330" r="5"/><circle cx="424" cy="330" r="5"/><circle cx="376" cy="348" r="5"/><circle cx="400" cy="348" r="5"/><circle cx="424" cy="348" r="5"/></g>
+              <g><circle cx="504" cy="330" r="5"/><circle cx="528" cy="330" r="5"/><circle cx="552" cy="330" r="5"/><circle cx="504" cy="348" r="5"/><circle cx="528" cy="348" r="5"/><circle cx="552" cy="348" r="5"/></g>
+              <g><circle cx="248" cy="402" r="5"/><circle cx="272" cy="402" r="5"/><circle cx="296" cy="402" r="5"/><circle cx="248" cy="420" r="5"/><circle cx="272" cy="420" r="5"/><circle cx="296" cy="420" r="5"/></g>
+              <g><circle cx="376" cy="402" r="5"/><circle cx="400" cy="402" r="5"/><circle cx="424" cy="402" r="5"/><circle cx="376" cy="420" r="5"/><circle cx="400" cy="420" r="5"/><circle cx="424" cy="420" r="5"/></g>
+              <g><circle cx="504" cy="402" r="5"/><circle cx="528" cy="402" r="5"/><circle cx="552" cy="402" r="5"/><circle cx="504" cy="420" r="5"/><circle cx="528" cy="420" r="5"/><circle cx="552" cy="420" r="5"/></g>
+            </g>
+            <!-- drip lines -->
+            <g stroke="#8ec8ee" stroke-width="2" stroke-dasharray="6 5" opacity=".9"><path d="M230 194 H586"/><path d="M230 266 H586"/><path d="M230 338 H586"/><path d="M230 410 H586"/></g>
+          </g>
+
+          <!-- RIGHT: ACCESSIBLE BEDS -->
+          <rect x="668" y="152" width="196" height="142" rx="16" fill="#dcecf7" stroke="#8fb8d9" stroke-width="1.5"/>
+          <g filter="url(#bedShadow)"><rect x="684" y="176" width="164" height="34" rx="8" fill="#a8cbe6" stroke="#5b8fc4" stroke-width="2"/><rect x="684" y="222" width="164" height="34" rx="8" fill="#a8cbe6" stroke="#5b8fc4" stroke-width="2"/><rect x="692" y="184" width="148" height="18" rx="4" fill="#6a9a58"/><rect x="692" y="230" width="148" height="18" rx="4" fill="#6a9a58"/></g>
+          <g fill="#d9f0d0"><circle cx="710" cy="193" r="4"/><circle cx="740" cy="193" r="4"/><circle cx="770" cy="193" r="4"/><circle cx="800" cy="193" r="4"/><circle cx="710" cy="239" r="4"/><circle cx="740" cy="239" r="4"/><circle cx="770" cy="239" r="4"/><circle cx="800" cy="239" r="4"/></g>
+
+          <!-- RIGHT: CHILDREN'S GARDEN -->
+          <rect x="668" y="310" width="196" height="158" rx="20" fill="#fef3b0" stroke="#d9b93a" stroke-width="1.5"/>
+          <g><circle cx="706" cy="368" r="20" fill="#e67e22"/><circle cx="706" cy="368" r="11" fill="#f5b041"/><circle cx="756" cy="360" r="16" fill="#c94f42"/><circle cx="756" cy="360" r="8" fill="#e67a6a"/><circle cx="806" cy="368" r="18" fill="#7ab648"/><circle cx="806" cy="368" r="9" fill="#a8d97a"/><path d="M692 404 q20-12 38 0 q20-14 40 0 q20-12 38 0" fill="none" stroke="#6aa84f" stroke-width="5" stroke-linecap="round"/><rect x="692" y="420" width="148" height="24" rx="8" fill="url(#wood)" stroke="#7d5636" stroke-width="1.2"/><circle cx="712" cy="432" r="4" fill="#4e8a4a"/><circle cx="742" cy="432" r="4" fill="#4e8a4a"/><circle cx="772" cy="432" r="4" fill="#4e8a4a"/><circle cx="802" cy="432" r="4" fill="#4e8a4a"/></g>
+
+          <!-- BOTTOM LEFT: SHARED PLOTS -->
+          <rect x="36" y="514" width="356" height="52" rx="14" fill="#a9c98a" stroke="#6f9a4e" stroke-width="1.5"/>
+          <path d="M56 540 H372 M56 526 H372 M56 554 H372" stroke="#7fb069" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+          <g fill="#5d9646"><circle cx="90" cy="540" r="6"/><circle cx="170" cy="540" r="6"/><circle cx="250" cy="540" r="6"/><circle cx="330" cy="540" r="6"/></g>
+
+          <!-- BOTTOM RIGHT: GATHERING / PERGOLA PATIO -->
+          <rect x="408" y="514" width="456" height="52" rx="14" fill="#e8dcc8" stroke="#cbb99a" stroke-width="1.2"/>
+          <!-- pergola with striped shade -->
+          <g filter="url(#soft)"><rect x="618" y="518" width="168" height="44" rx="8" fill="#8a5f36" opacity=".18"/><rect x="614" y="514" width="168" height="44" rx="8" fill="#a9713d"/><g stroke="#7a4e28" stroke-width="5"><path d="M632 514 V558 M654 514 V558 M676 514 V558 M698 514 V558 M720 514 V558 M742 514 V558 M764 514 V558"/></g><rect x="614" y="514" width="168" height="44" rx="8" fill="none" stroke="#6f4525" stroke-width="1.5"/></g>
+          <!-- picnic tables round + umbrellas + benches + notice -->
+          <g filter="url(#soft)"><circle cx="468" cy="540" r="17" fill="#fff" stroke="#b9a07a" stroke-width="1.5"/><circle cx="468" cy="540" r="6" fill="#c96a3a"/><path d="M468 523 L482 540 H454 Z" fill="#e8a87a" opacity=".9"/><circle cx="542" cy="540" r="17" fill="#fff" stroke="#b9a07a" stroke-width="1.5"/><circle cx="542" cy="540" r="6" fill="#2c6e35"/><path d="M542 523 L556 540 H528 Z" fill="#8fce97" opacity=".9"/></g>
+          <g fill="#8a6d4b"><rect x="800" y="524" width="12" height="32" rx="3"/><rect x="820" y="524" width="34" height="10" rx="3"/></g>
+          <rect x="416" y="522" width="30" height="36" rx="4" fill="#fff" stroke="#8a6d4b" stroke-width="1.5"/><text x="431" y="544" text-anchor="middle" font-family="Public Sans, sans-serif" font-size="9" font-weight="800" fill="#5a4630">i</text>
+
+          <!-- POLLINATOR STRIP (very bottom inside fence, split by gate) -->
+          <rect x="36" y="574" width="356" height="0" fill="none"/>
+          <!-- represented as flower band along bottom edge inside shared/gathering row is already used; add thin band below paths? Use strip along fence bottom -->
+          <g><rect x="36" y="566" width="356" height="14" rx="7" fill="#f3c6dc" opacity=".9"/><rect x="500" y="566" width="364" height="14" rx="7" fill="#f3c6dc" opacity=".9"/><g><circle cx="70" cy="573" r="4" fill="#e67e22"/><circle cx="130" cy="573" r="4" fill="#c0392b"/><circle cx="190" cy="573" r="4" fill="#8e6bbf"/><circle cx="250" cy="573" r="4" fill="#eab543"/><circle cx="310" cy="573" r="4" fill="#e67e22"/><circle cx="540" cy="573" r="4" fill="#c0392b"/><circle cx="610" cy="573" r="4" fill="#8e6bbf"/><circle cx="680" cy="573" r="4" fill="#eab543"/><circle cx="750" cy="573" r="4" fill="#e67e22"/><circle cx="820" cy="573" r="4" fill="#c0392b"/></g></g>
+
+          <!-- FENCE: posts and rails, drawn on top perimeter with gate gap at bottom centre (x 408-500) -->
+          <g stroke="#7a5f3a" stroke-width="5" fill="none" stroke-linecap="round"><path d="M28 28 H872 V580 H500"/><path d="M408 580 H28 V28"/></g>
+          <g stroke="#b99a67" stroke-width="1.6" stroke-dasharray="2 14" fill="none"><path d="M28 28 H872 V580 H500"/><path d="M408 580 H28 V28"/></g>
+          <g fill="#5f4630"><circle cx="28" cy="28" r="5"/><circle cx="200" cy="28" r="4"/><circle cx="450" cy="28" r="4"/><circle cx="700" cy="28" r="4"/><circle cx="872" cy="28" r="5"/><circle cx="872" cy="300" r="4"/><circle cx="872" cy="580" r="5"/><circle cx="28" cy="580" r="5"/><circle cx="28" cy="300" r="4"/></g>
+          <!-- gate + archway -->
+          <rect x="408" y="566" width="92" height="28" rx="6" fill="#ecdcb8" stroke="#d9c69a" stroke-width="1.2"/>
+          <path d="M416 594 A38 32 0 0 1 492 594" fill="none" stroke="#6b5436" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="416" cy="594" r="5" fill="#5f4630"/><circle cx="492" cy="594" r="5" fill="#5f4630"/>
+
+          <!-- HOSE STATIONS -->
+          <g><g filter="url(#soft)"><circle cx="208" cy="152" r="11" fill="#2f7fc4" stroke="#fff" stroke-width="2"/><text x="208" y="157" text-anchor="middle" font-family="Public Sans, sans-serif" font-size="11" font-weight="800" fill="#fff">H</text></g><g filter="url(#soft)"><circle cx="618" cy="310" r="11" fill="#2f7fc4" stroke="#fff" stroke-width="2"/><text x="618" y="315" text-anchor="middle" font-family="Public Sans, sans-serif" font-size="11" font-weight="800" fill="#fff">H</text></g><g filter="url(#soft)"><circle cx="652" cy="468" r="11" fill="#2f7fc4" stroke="#fff" stroke-width="2"/><text x="652" y="473" text-anchor="middle" font-family="Public Sans, sans-serif" font-size="11" font-weight="800" fill="#fff">H</text></g><g filter="url(#soft)"><circle cx="208" cy="468" r="11" fill="#2f7fc4" stroke="#fff" stroke-width="2"/><text x="208" y="473" text-anchor="middle" font-family="Public Sans, sans-serif" font-size="11" font-weight="800" fill="#fff">H</text></g></g>
+
+          <!-- LABEL PILLS (white tags, dot anchor, leader) -->
+          <g class="tag"><circle cx="380" cy="80" r="4"/><rect x="302" y="52" width="172" height="24" rx="12"/><text x="388" y="68" text-anchor="middle">Fruit trees + berries</text></g>
+          <g class="tag"><circle cx="114" cy="183" r="4"/><rect x="52" y="158" width="124" height="24" rx="12"/><text x="114" y="174" text-anchor="middle">Tool shed</text></g>
+          <g class="tag"><circle cx="114" cy="267" r="4"/><rect x="46" y="242" width="136" height="24" rx="12"/><text x="114" y="258" text-anchor="middle">Greenhouse</text></g>
+          <g class="tag"><circle cx="114" cy="389" r="4"/><rect x="38" y="364" width="152" height="24" rx="12" opacity="0"/><rect x="52" y="364" width="124" height="24" rx="12"/><text x="114" y="380" text-anchor="middle">Compost · 3 bins</text></g>
+          <g class="tag"><circle cx="406" cy="160" r="4"/><path d="M406 168 V182" stroke="#24351f" stroke-width="1" opacity=".4"/><rect x="306" y="138" width="200" height="24" rx="12"/><text x="406" y="154" text-anchor="middle">Raised beds · 4 × 10 ft</text></g>
+          <g class="tag"><circle cx="766" cy="168" r="4"/><rect x="676" y="158" width="180" height="24" rx="12"/><text x="766" y="174" text-anchor="middle">Accessible beds</text></g>
+          <g class="tag"><circle cx="766" cy="326" r="4"/><rect x="678" y="316" width="176" height="24" rx="12"/><text x="766" y="332" text-anchor="middle">Children's garden</text></g>
+          <g class="tag"><circle cx="214" cy="540" r="4"/><rect x="139" y="528" width="150" height="24" rx="12"/><text x="214" y="544" text-anchor="middle">Shared plots</text></g>
+          <g class="tag"><circle cx="698" cy="536" r="4"/><rect x="618" y="524" width="160" height="24" rx="12"/><text x="698" y="540" text-anchor="middle">Pergola</text></g>
+          <g class="tag"><circle cx="454" cy="580" r="4"/><rect x="404" y="586" width="100" height="22" rx="11"/><text x="454" y="601" text-anchor="middle">Entrance</text></g>
+          <text x="114" y="342" text-anchor="middle" class="tiny">Cold frames</text>
+          <text x="114" y="470" text-anchor="middle" class="tiny" fill="#24507a">Rainwater barrels + tank</text>
+          <text x="220" y="592" text-anchor="middle" class="tiny" fill="#8a3a6b">Pollinator strip along the fence</text>
+
+          <!-- NORTH ARROW + SCALE -->
+          <g><circle cx="838" cy="52" r="22" fill="#fff" opacity=".92" stroke="rgba(35,53,28,.2)"/><path d="M838 36 L844 52 L838 48 L832 52 Z" fill="#2c6e35"/><text x="838" y="70" text-anchor="middle" font-family="Public Sans, sans-serif" font-size="11" font-weight="800" fill="#24351f">N</text></g>
+          <g><rect x="36" y="602" width="100" height="6" rx="3" fill="#24351f"/><rect x="36" y="602" width="50" height="6" fill="#fff" opacity=".85"/><text x="36" y="598" font-family="Public Sans, sans-serif" font-size="11" font-weight="700" fill="#24351f">0</text><text x="118" y="598" font-family="Public Sans, sans-serif" font-size="11" font-weight="700" fill="#24351f">10 ft</text></g>
+        </svg>
+      </div>
+      <p class="garden-map-sub"><strong>Entrance and gathering area:</strong> by the gate at the bottom of the map, with the archway sign, notice board, benches, shaded picnic tables under the pergola, and room to meet.</p>
+      <ul class="map-legend" aria-label="Map legend">
+        <li><span class="sw" style="background:#8a6d4b"></span><span><strong>Raised beds, 4 × 10 ft:</strong> wood framed beds with soil and crop rows, for members to rent or adopt.</span></li>
+        <li><span class="sw" style="background:#a9c98a"></span><span><strong>Shared plots:</strong> group projects and food pantry donations.</span></li>
+        <li><span class="sw" style="background:#8fb8d9"></span><span><strong>Accessible beds:</strong> raised to wheelchair height, at the path edge near a main path.</span></li>
+        <li><span class="sw" style="background:#eab543"></span><span><strong>Children's garden:</strong> easy crops and sensory plants, in brighter rounded beds.</span></li>
+        <li><span class="sw" style="background:#4e7f3a"></span><span><strong>Fruit and berries:</strong> canopy fruit trees with blueberries, strawberries, and blackberries.</span></li>
+        <li><span class="sw" style="background:#e88ab8"></span><span><strong>Pollinator strip:</strong> marigolds, sunflowers, lavender, zinnias, milkweed, and wildflowers along the fence.</span></li>
+        <li><span class="sw sw-sq" style="background:#b98a5f"></span><span><strong>Shed, greenhouse, cold frames:</strong> tools, seed starting, and a longer season.</span></li>
+        <li><span class="sw" style="background:#5b9bd5"></span><span><strong>Compost and rainwater:</strong> three bin compost, with barrels and a tank fed by roof runoff.</span></li>
+        <li><span class="sw sw-sq" style="background:#a9713d"></span><span><strong>Pergola and gathering:</strong> slatted shade, picnic tables with umbrellas, benches, and notice board.</span></li>
+        <li><span class="sw" style="background:#2f7fc4"></span><span><strong>Hose stations:</strong> blue H markers are spigots spaced through the garden.</span></li>
+        <li><span class="sw sw-line"></span><span><strong>Drip irrigation:</strong> light blue dashed lines run along the raised bed rows.</span></li>
+        <li><span class="sw sw-sq" style="background:#ecdcb8"></span><span><strong>Paths and fence:</strong> warm gravel paths inside a posts and rails fence, with one entrance gate.</span></li>
+      </ul>
+      <p class="garden-map-note">Sizes and positions are a planning guide, not a survey. The drawing follows Ruth's written plan only, and the layout still needs fitting to the site and City approval.</p>
+      </div>
+    </div>
+
+        <div class="plan-grid">
       <article class="card plan-card">
         <h3><span class="pc-k">Arrival</span>Entrance &amp; gathering area</h3>
         <ul>
