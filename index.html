@@ -59,14 +59,14 @@
   }
   button,[role="button"],select,summary,input:not([type="checkbox"],[type="radio"]){min-height:2.25rem}
   a{color:var(--green)}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 16px 56px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 16px 40px}
 
   /* ---------- Hero ---------- */
   .hero{position:relative;margin:0 -16px;border-radius:0 0 22px 22px;overflow:hidden;background:var(--green-deep)}
   .hero img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center 38%}
   .hero-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,26,13,.9) 0%,rgba(12,26,13,.5) 55%,rgba(12,26,13,.18) 100%)}
-  .hero-text{position:relative;padding:110px 20px 20px;color:#f4f8ee}
-  @media (max-width:640px){ .hero-text{padding-top:72px} }
+  .hero-text{position:relative;padding:84px 20px 20px;color:#f4f8ee}
+  @media (max-width:640px){ .hero-text{padding-top:56px} }
   .hero-text h1{
     font-family:"Newsreader",Georgia,serif;font-weight:600;
     font-size:clamp(1.9rem,5.4vw,3rem);line-height:1.08;margin:0 0 8px;letter-spacing:.1px;
@@ -82,7 +82,7 @@
   .fact svg{flex:none}
 
   /* ---------- Stat strip ---------- */
-  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0 6px}
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0 2px}
   @media (min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
   .stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px 14px;box-shadow:var(--shadow)}
   .stat .num{font-family:"Newsreader",Georgia,serif;font-size:2rem;font-weight:700;line-height:1;color:var(--green-deep)}
@@ -90,9 +90,9 @@
   .stat .sub{font-size:.8rem;color:var(--ink-soft)}
 
   /* ---------- Sections ---------- */
-  section{margin-top:38px}
-  .sec-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
-  h2{font-family:"Newsreader",Georgia,serif;font-size:1.65rem;font-weight:600;margin:0;line-height:1.15}
+  section{margin-top:26px;scroll-margin-top:86px}
+  .sec-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+  h2{font-family:"Newsreader",Georgia,serif;font-size:1.65rem;font-weight:600;margin:0;line-height:1.15;scroll-margin-top:86px}
   .sec-head .hint{font-size:.9rem;color:var(--ink-soft)}
   .sec-intro{color:var(--ink-soft);margin:0 0 16px;max-width:680px}
 
@@ -262,8 +262,35 @@
     border:1px solid var(--green);color:var(--green);border-radius:10px;padding:10px 16px;margin-top:6px;
   }
   .sheet-embed{padding:0;overflow:hidden}
-  .sheet-embed iframe{display:block;width:100%;height:620px;border:0}
-  @media (max-width:640px){.sheet-embed iframe{height:520px}}
+  .sheet-embed iframe{display:block;width:100%;height:500px;border:0}
+  @media (max-width:640px){.sheet-embed iframe{height:440px}}
+
+  /* ---------- Compact dashboard navigation ---------- */
+  .dash-nav{
+    position:sticky;top:8px;z-index:50;display:flex;align-items:center;gap:8px;
+    overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;
+    margin:14px 0 2px;padding:9px;background:var(--surface);
+    border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow);
+  }
+  .dash-nav::-webkit-scrollbar{display:none}
+  .dash-nav a,.dash-nav button{
+    flex:none;border-radius:999px;padding:7px 12px;font:inherit;font-size:.88rem;
+    font-weight:700;line-height:1.25;text-decoration:none;white-space:nowrap;
+  }
+  .dash-nav a{color:var(--green-deep);background:var(--surface-2);border:1px solid transparent}
+  .dash-nav a:hover,.dash-nav a:focus-visible{border-color:var(--green);outline:none}
+  .dash-nav button{margin-left:auto;color:#fff;background:var(--green);border:1px solid var(--green);cursor:pointer}
+  .section-toggle{
+    margin-left:auto;border:1px solid var(--line);background:var(--surface-2);color:var(--green-deep);
+    border-radius:999px;padding:6px 12px;font:inherit;font-size:.84rem;font-weight:800;cursor:pointer;
+  }
+  .section-toggle:hover,.section-toggle:focus-visible{border-color:var(--green);outline:none}
+  .section-body[hidden]{display:none!important}
+  @media (max-width:640px){
+    .dash-nav{border-radius:16px;top:6px}
+    .dash-nav button{margin-left:0}
+    .section-toggle{margin-left:0}
+  }
 </style>
 </head>
 <body>
@@ -294,7 +321,21 @@
   </header>
 
   <!-- ================= AT A GLANCE ================= -->
-  <div class="stats" role="list" aria-label="Garden at a glance">
+  <nav class="dash-nav" aria-label="Dashboard sections">
+    <a href="#glance">At a glance</a>
+    <a href="#road-h">Roadmap</a>
+    <a href="#plan-h">Plan &amp; map</a>
+    <a href="#next-h">Next steps</a>
+    <a href="#punch-h">Checklist</a>
+    <a href="#give-h">Needs</a>
+    <a href="#meet-h">Meetings</a>
+    <a href="#join-h">Get involved</a>
+    <a href="#track-h">Trackers</a>
+    <a href="#sheet-h">Live sheet</a>
+    <button type="button" id="toggle-all-sections" aria-pressed="false">Expand all</button>
+  </nav>
+
+  <div class="stats" id="glance" role="list" aria-label="Garden at a glance">
     <div class="stat" role="listitem">
       <div class="num">5 of 26</div>
       <div class="lbl">Startup tasks done</div>
@@ -954,6 +995,83 @@
   });
   searchEl.addEventListener("input", render);
   render();
+})();
+</script>
+
+<script>
+(function(){
+  "use strict";
+
+  var openByDefault = { "road-h": true, "next-h": true };
+  var entries = [];
+  var toggleAllBtn = document.getElementById("toggle-all-sections");
+
+  function refreshToggleAll(){
+    if(!toggleAllBtn || !entries.length) return;
+    var allOpen = entries.every(function(entry){ return !entry.body.hidden; });
+    toggleAllBtn.textContent = allOpen ? "Collapse all" : "Expand all";
+    toggleAllBtn.setAttribute("aria-pressed", allOpen ? "true" : "false");
+  }
+
+  function setOpen(entry, open){
+    entry.body.hidden = !open;
+    entry.button.textContent = open ? "Hide" : "Show";
+    entry.button.setAttribute("aria-expanded", open ? "true" : "false");
+    refreshToggleAll();
+  }
+
+  document.querySelectorAll("section[aria-labelledby]").forEach(function(section, index){
+    var head = section.querySelector(".sec-head");
+    var heading = section.querySelector("h2");
+    if(!head || !heading || !heading.id) return;
+
+    var body = document.createElement("div");
+    body.className = "section-body";
+    body.id = "section-body-" + (index + 1);
+
+    var node = head.nextSibling;
+    var toMove = [];
+    while(node){
+      toMove.push(node);
+      node = node.nextSibling;
+    }
+    toMove.forEach(function(child){ body.appendChild(child); });
+    section.appendChild(body);
+
+    var button = document.createElement("button");
+    button.type = "button";
+    button.className = "section-toggle";
+    button.setAttribute("aria-controls", body.id);
+    head.appendChild(button);
+
+    var entry = { id: heading.id, body: body, button: button };
+    button.addEventListener("click", function(){ setOpen(entry, body.hidden); });
+    entries.push(entry);
+    setOpen(entry, !!openByDefault[heading.id]);
+  });
+
+  document.querySelectorAll(".dash-nav a[href^='#']").forEach(function(link){
+    link.addEventListener("click", function(){
+      var id = link.getAttribute("href").slice(1);
+      var entry = entries.find(function(item){ return item.id === id; });
+      if(entry && entry.body.hidden) setOpen(entry, true);
+    });
+  });
+
+  if(toggleAllBtn){
+    toggleAllBtn.addEventListener("click", function(){
+      var shouldOpen = entries.some(function(entry){ return entry.body.hidden; });
+      entries.forEach(function(entry){ setOpen(entry, shouldOpen); });
+    });
+  }
+
+  if(location.hash){
+    var targetId = location.hash.slice(1);
+    var target = entries.find(function(item){ return item.id === targetId; });
+    if(target && target.body.hidden) setOpen(target, true);
+  }
+
+  refreshToggleAll();
 })();
 </script>
 </body>
