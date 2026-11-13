@@ -261,6 +261,9 @@
     display:inline-flex;align-items:center;gap:8px;font-weight:700;text-decoration:none;
     border:1px solid var(--green);color:var(--green);border-radius:10px;padding:10px 16px;margin-top:6px;
   }
+  .sheet-embed{padding:0;overflow:hidden}
+  .sheet-embed iframe{display:block;width:100%;height:620px;border:0}
+  @media (max-width:640px){.sheet-embed iframe{height:520px}}
 </style>
 </head>
 <body>
@@ -800,8 +803,20 @@
     </div>
   </section>
 
+  <!-- ================= MASTER SPREADSHEET (LIVE) ================= -->
+  <section aria-labelledby="sheet-h">
+    <div class="sec-head">
+      <h2 id="sheet-h">The master spreadsheet, live</h2>
+      <span class="hint">The same sheet the garden team edits. Always current, right here.</span>
+    </div>
+    <p class="sec-intro">Everything on this page comes from the garden's master spreadsheet: the punch list, startup budget, wish list, sponsorships, plots, and volunteer hours. It is embedded below straight from Google Sheets, so what you see is the live record, not a copy. Scroll it, switch tabs along the bottom, and it stays in step with the team's edits.</p>
+    <div class="card sheet-embed">
+      <iframe src="https://docs.google.com/spreadsheets/d/1RLOAfVwZ5WkgecQ353aXbhchSwYE7-09HWBU8R1WU7U/preview" title="FWB Community Garden master spreadsheet" loading="lazy"></iframe>
+    </div>
+  </section>
+
   <footer>
-    <p><strong>About this page:</strong> A friendlier view of the FWB Community Garden master sheet, snapshot taken Nov 10, 2026, with the garden plan from Ruth Sykes' Oct 17, 2026 proposal. The spreadsheet stays the record the team edits — when numbers change there, this page needs a refresh to match.</p>
+    <p><strong>About this page:</strong> A friendlier view of the FWB Community Garden master sheet, snapshot taken Nov 10, 2026, with the garden plan from Ruth Sykes' Oct 17, 2026 proposal. The spreadsheet stays the record the team edits, and it is embedded live above, so its numbers here are always current; the rest of this page is refreshed as the plan moves.</p>
     <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/1RLOAfVwZ5WkgecQ353aXbhchSwYE7-09HWBU8R1WU7U/edit?usp=drivesdk" target="_blank" rel="noopener">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7M21 3l-9.5 9.5M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg>
       Open the master spreadsheet
